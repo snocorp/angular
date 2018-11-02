@@ -179,6 +179,12 @@ export {
   getPlayers as ɵgetPlayers,
 } from './render3/players';
 
+export {
+  AnimatePipe as ɵAnimatePipe,
+  AnimatePipeModule as ɵAnimatePipeModule,
+  AUTO_STYLE as ɵAUTO_STYLE,
+} from './render3/animations/public_api';
+
 // we reexport these symbols just so that they are retained during the dead code elimination
 // performed by rollup while it's creating fesm files.
 //

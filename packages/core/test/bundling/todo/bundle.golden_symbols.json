@@ -3,6 +3,9 @@
     "name": "ACTIVE_INDEX"
   },
   {
+    "name": "AUTO_STYLE"
+  },
+  {
     "name": "BINDING_INDEX"
   },
   {
@@ -379,6 +382,15 @@
   },
   {
     "name": "appendChild"
+  },
+  {
+    "name": "applyClassChanges"
+  },
+  {
+    "name": "applyStyle"
+  },
+  {
+    "name": "applyStyleChanges"
   },
   {
     "name": "assertTemplate"

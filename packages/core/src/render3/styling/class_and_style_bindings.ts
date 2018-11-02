@@ -6,6 +6,7 @@
  * found in the LICENSE file at https://angular.io/license
  */
 import {StyleSanitizeFn} from '../../sanitization/style_sanitizer';
+import {applyClassChanges, applyStyleChanges} from '../animations/util';
 import {InitialStylingFlags} from '../interfaces/definition';
 import {BindingStore, BindingType, Player, PlayerBuilder, PlayerFactory, PlayerIndex} from '../interfaces/player';
 import {Renderer3, RendererStyleFlags3, isProceduralRenderer} from '../interfaces/renderer';
@@ -565,7 +566,7 @@ export function renderStyleAndClassBindings(
               wasQueued && totalPlayersQueued++;
             }
             if (oldPlayer) {
-              oldPlayer.destroy();
+              oldPlayer.destroy(player);
             }
           }
         } else if (oldPlayer) {
@@ -919,7 +920,7 @@ function hasValueChanged(
 }
 
 export class ClassAndStylePlayerBuilder<T> implements PlayerBuilder {
-  private _values: {[key: string]: string | null} = {};
+  private _values: {[key: string]: any} = {};
   private _dirty = false;
   private _factory: BoundPlayerFactory<T>;
 
@@ -941,6 +942,13 @@ export class ClassAndStylePlayerBuilder<T> implements PlayerBuilder {
     if (this._dirty) {
       const player = this._factory.fn(
           this._element, this._type, this._values !, isFirstRender, currentPlayer || null);
+      if (!player) {
+        if (this._type === BindingType.Class) {
+          applyClassChanges(this._element, this._values);
+        } else if (this._type === BindingType.Style) {
+          applyStyleChanges(this._element, this._values);
+        }
+      }
       this._values = {};
       this._dirty = false;
       return player;
