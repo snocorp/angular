@@ -5,12 +5,11 @@
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
  */
-import {NgModule} from '@angular/core/src/core';
-import {BoundPlayerFactory} from '@angular/core/src/render3/styling/player_factory';
-
 import {AnimatePipe} from '../../../src/render3/animations/animate_pipe';
 import {StylingPlayer} from '../../../src/render3/animations/styling_player';
 import {BindingType} from '../../../src/render3/interfaces/player';
+import {BoundPlayerFactory} from '../../../src/render3/styling/player_factory';
+
 import {makeElement} from './shared';
 
 describe('AnimatePipe', () => {
@@ -34,10 +33,6 @@ describe('AnimatePipe', () => {
     expect(player instanceof StylingPlayer).toBeTruthy();
   });
 });
-
-@NgModule({declarations: [AnimatePipe]})
-class SomeModule {
-}
 
 function buildClassPlayer(
     element: HTMLElement, classes: {[key: string]: boolean}, duration: string) {

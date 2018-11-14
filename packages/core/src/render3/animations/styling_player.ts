@@ -7,7 +7,7 @@
  */
 import {Observable, Subject} from 'rxjs';
 
-import {PlayState, Player} from '../../render3/interfaces/player';
+import {PlayState, Player} from '../interfaces/player';
 
 import {Animator, StylingEffect, Timing} from './interfaces';
 import {hyphenateProp} from './util';

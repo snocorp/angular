@@ -7,8 +7,8 @@
  */
 import {Pipe} from '../../metadata/directives';
 import {NgModule} from '../../metadata/ng_module';
-import {BindingType, Player} from '../../render3/interfaces/player';
-import {bindPlayerFactory} from '../../render3/styling/player_factory';
+import {BindingType, Player} from '../interfaces/player';
+import {bindPlayerFactory} from '../styling/player_factory';
 
 import {CssTransitionAnimator} from './css_transition_animator';
 import {getDefaultRenderUtil} from './default_render_util';
