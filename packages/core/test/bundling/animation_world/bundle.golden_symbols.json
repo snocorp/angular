@@ -324,6 +324,9 @@
     "name": "__extends$3"
   },
   {
+    "name": "__forward_ref__"
+  },
+  {
     "name": "__read"
   },
   {
@@ -717,6 +720,9 @@
     "name": "flattenUnsubscriptionErrors"
   },
   {
+    "name": "forwardRef"
+  },
+  {
     "name": "generateExpandoInstructionBlock"
   },
   {
@@ -793,6 +799,9 @@
   },
   {
     "name": "getElementDepthCount"
+  },
+  {
+    "name": "getFirstParentNative"
   },
   {
     "name": "getFirstTemplatePass"
@@ -1300,6 +1309,9 @@
   },
   {
     "name": "resolveDirectives"
+  },
+  {
+    "name": "resolveForwardRef"
   },
   {
     "name": "restoreView"
