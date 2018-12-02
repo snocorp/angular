@@ -126,7 +126,7 @@ jobs:
           key: my-project-{{ .Branch }}-{{ checksum "package-lock.json" }}
           paths:
             - "node_modules"
-      - run: npm run test -- --single-run --no-progress --browser=ChromeHeadlessCI
+      - run: npm run test -- --watch=false --no-progress --browsers=ChromeHeadlessCI
       - run: npm run e2e -- --no-progress --config=protractor-ci.conf.js
 ```
 
